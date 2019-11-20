@@ -136,7 +136,8 @@ Replace the **`app.component.html`** with this code:
 and put this styling in **`app.component.scss`**
 ```CSS
 :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
     color: #333;
     box-sizing: border-box;
@@ -210,7 +211,10 @@ loaderSpinnerBackground: string;
 
 For now let us add a background color to the loader so that when your dashboard is loading, it has the same background color as the body.
 ```HTML
-   <cumulio-dashboard [dashboard]="'763177aa-9b93-4ae7-903e-3cb07dc593d8'" [loaderBackground]="'rgb(238, 243, 246)'"></cumulio-dashboard>
+<cumulio-dashboard 
+  [dashboard]="'763177aa-9b93-4ae7-903e-3cb07dc593d8'" 
+  [loaderBackground]="'rgb(238, 243, 246)'">
+</cumulio-dashboard>
 ```
 
 Let's say we want to change our loader colors to match our dashboard. 
@@ -278,7 +282,8 @@ export class AppModule { }
 **`app.component.scss`**
 ```CSS
 :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
     color: #333;
     box-sizing: border-box;
