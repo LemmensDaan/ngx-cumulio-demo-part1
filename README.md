@@ -1,56 +1,52 @@
-# Using ngx-cumulio to show a  [Cumul.io](https://cumul.io/main) dashboard.
-![dashboard image](///)    
-[Stackblitz Part 1](https://stackblitz.com/edit/ngx-cumulio-tutorial-part1)
+# Using ngx-cumulio to show a  [Cumul.io](https://cumul.io/main) dashboard
+![dashboard example](src/dashboardExample.png)    
+## [Demo Part 1](https://stackblitz.com/edit/ngx-cumulio-tutorial-part1)   |   [Code Part 1](https://github.com/LemmensDaan/ngx-cumulio-demo-part1)
 
-## Contents
+# Contents
 - [What is ngx-cumulio](#What-is-ngx-cumulio)
 - [What we'll build](#What-we'll-build)
-    - Part 1: show and "customize" a dashboard  
-    - Part 2: implement dashboards in a multiple page website
+    - Part 1: display and customize a dashboard  
+    - Part 2: embed dashboards in a multiple page website
 - [Requirements](#Requirements)
 - [Part 1 - Embedding a Cumul.io dashboard](#Part-1---Embedding-a-Cumul.io-dashboard)
     - [Setup Angular App](#Setup-Angular-App)
-    - [Start code](#Start-Code)
+    - [Start code](#Displaying-the-dashboard)
     - [Code so far](#Code-so-far)
 - [Conclusion](#Conclusion)
-- [Part 2](#Part-2)
  ___
 
 ## What is ngx-cumulio
-ngx-cumulio is an Angular library. With this library you can easily add one or more Cumul.io dashboards in your web application.    
-The library is compatible with versions of Angular 4 or higher.   
-For more information about ngx-cumulio, [visit the readme on npm](https://www.npmjs.com/package/ngx-cumulio). For more information about Cumul.io, [visit the website](https://cumul.io/main).
+ngx-cumulio is an Angular library. With this library you can easily embed one or more Cumul.io dashboards in your web application.    
+The library is compatible with versions of Angular 4 and higher.   
+For more information about ngx-cumulio, [visit the readme on npm](https://www.npmjs.com/package/ngx-cumulio). For more information about Cumul.io or making your own dashbaord, [visit the website](https://cumul.io/main).
+___
 
 ## What we'll build
 This tutorial is split up in 2 parts, this is part 1. In this part we will make a simple one page Angular application with an embedded Cumul.io dashboard.  
-In [part 2](https://github.com/LemmensDaan/ngx-cumulio-demo-part2/blob/master/README.md) we will make a multipage Angular application with several dashboards.
-
+In [part 2](https://github.com/LemmensDaan/ngx-cumulio-demo-part2/blob/master/README.md), we will make a multipage Angular application with several dashboards.
+___
 
 ## Requirements
 Basic knowledge of Angular and npm  
 Terminal / command line
 ___
 
-## Part 1 - Embedding a Cumul.io dashboard
-In this part we will make a simple Angular application with an embedded dashboard. You can use the dashboards I provide further in the tutorial or you can use your own dashboards. If you don't have an account yet, you can start a free trial account at [Cumul.io](https://cumul.io/main). Here you can make your own dashboard, you only need the dashboard id to use it in your webapplication.
+# Part 1 - Embedding a Cumul.io dashboard
+In this part we will make a simple Angular application with an embedded dashboard. You can use the dashboards I provide further in the tutorial or you can use your own dashboards. If you want to make your own dashboards, head over to [Cumul.io](https://cumul.io/main) and sign up to start a free trial. There you can make your own dashboards.
 
-### Setup Angular App
+## Setup Angular App
 **Let's get started!**   
-First, make a new angular project:
+First, create a new angular project:
 
 ```bash
 ng new my-dashboard-website
 ```
 Type `yes` for routing, we are going to need it for part 2 of this tutorial, where we make a multipage application.   
 Choose your prefered styling language, we'll be using `scss` in this tutorial     
-We can start this Angular app by using the `ng serve` command, but first be sure you are in the right directory:
-```bash
-ng serve
-```
-Go to [localhost:4200](https://localhost:4200/) to see your app in action.
+We can start this Angular app by using the `ng serve` command, but be sure you are in the correct directory.  
+Go to [`localhost:4200`](https://localhost:4200/) to see your app in action.  
 
-
-Next, to install the library type the following command in your **`terminal`**:
+Next, install the library by using the following command in your **`terminal`**:
 ```bash
 npm i ngx-cumulio
 ```
@@ -69,11 +65,11 @@ npm i zone.js
 ___
 
 
-### Start Code
+## Displaying the dashboard
 We'll mainly be working inside de app folder.    
 
 
-For starters, import our library: ngx-cumulio
+For starters, import our library: ``ngx-cumulio``
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -99,12 +95,12 @@ export class AppModule { }
 
 ```
 
-To use the library we only have to insert a dashboard Id and the following html code into the **`app.component.html`**:
+To use the library we only have to insert a dashboard id and the following html code into the **`app.component.html`**:
 ```HTML
    <cumulio-dashboard [dashboard]="'763177aa-9b93-4ae7-903e-3cb07dc593d8'"></cumulio-dashboard>
 ```
-Now you should see a dashboard appear
-Remember, you can also use your own dashboard id or try some other ones below:
+Now you should see a dashboard appear.  
+Remember, you can also use your own dashboards or try some other ones below:
 ```typescript
 '55cfb99c-d602-492b-b192-6c15277fdb9a'
 '763177aa-9b93-4ae7-903e-3cb07dc593d8'
@@ -120,7 +116,7 @@ Remember, you can also use your own dashboard id or try some other ones below:
 'ff16ad9f-fd27-4e09-b4a8-a6ab71b980dc'
 ```
 
-To make our application more like a website, let us add a simple header and footer.
+Now we will just add some HTML and CSS to add a simple toolbar and footer.
 Replace the **`app.component.html`** with this code: 
 ```HTML
 <!-- Toolbar -->
@@ -183,7 +179,9 @@ and put this styling in **`app.component.scss`**
 }
 ```
 
-Our background color doesn't match the color of our dashboard background. When you create a dashboard you can choose your own dashboard background color, the color of this dashboard is: **`rgb(238, 243, 246)`** Change your body background color in the main **`styles.scss`**.
+Our background color doesn't match the color of our dashboard background. The color of this dashboard is **`rgb(238, 243, 246)`**.   
+When you create a dashboard you can choose dashboard background color, but now we will have to change the background of our application.  
+Change the body background color in the main **`styles.scss`**.
 
 ```CSS
 html, body {
@@ -195,7 +193,7 @@ body {
 }
 ```
 
-Now we can add some variables to our dashboard, here is a list of all the variables we can add to our dashboard.       
+Now we can add some variables to our dashboard. Here is a list of all the variables we can add to our dashboard.       
 For a more detailed description of the variables go to the readme page of the library: [ngx-cumulio](https://www.npmjs.com/package/ngx-cumulio)
 ```Typescript
 dashboard: string;
@@ -210,7 +208,7 @@ loaderSpinnerColor: string;
 loaderSpinnerBackground: string;
 ```
 
-For now let us add the same color to the variable loaderBackground, so that when your dashboard is loading, it has the same background color.
+For now let us add a background color to the loader so that when your dashboard is loading, it has the same background color as the body.
 ```HTML
    <cumulio-dashboard [dashboard]="'763177aa-9b93-4ae7-903e-3cb07dc593d8'" [loaderBackground]="'rgb(238, 243, 246)'"></cumulio-dashboard>
 ```
@@ -226,15 +224,14 @@ Let's say we want to change our loader colors to match our dashboard.
 </cumulio-dashboard>
 ```
 Now the loader and the font color are in a blue color.
-
 You can also have multiple dashboards on one page if you want. Just add another `cumulio-dashboard` in the `content` div and watch the magic happen.
 
 ___
 
-### Code so far 
+## Code so far 
 
  
-Code for Part 1
+Code for Part 1   
 **`app.module.ts`**
 ```Typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -337,10 +334,8 @@ body {
 ___
 
 ## Conclusion
-Conclusie blablabla
-___
-
-## Part 2
-Make a multipage application with several embedded dashboards!  
-[Tutorial Part 2](https://github.com/LemmensDaan/ngx-cumulio-demo-part2/blob/master/README.md)  
-[Stackblitz Part 2](https://stackblitz.com/edit/ngx-cumulio-tutorial-part2)
+As you can see it is easy to add a Cumul.io dashboard to your website by using this library.   
+You only have to do some minimal styling in your application, because the dashboard will always take up the full width of the parent and then calculate the height it needs to show the full dashbaord. The only tricky thing you need to do is find a nice spot in your application for your dashboard.   
+[Code Part 1](https://github.com/LemmensDaan/ngx-cumulio-demo-part1)  |   [Demo Part 1](https://stackblitz.com/edit/ngx-cumulio-tutorial-part1)   
+[Go to part 2 to make a multipage application with several embedded dashboards!](https://github.com/LemmensDaan/ngx-cumulio-demo-part2/blob/master/README.md)
+___  
