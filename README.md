@@ -1,16 +1,16 @@
 # Using ngx-cumulio to show a  [Cumul.io](https://cumul.io/main) dashboard
-![dashboard example](src/dashboardExample.png)    
+![dashboard example](dashboardExample.png)    
 ## [Demo Part 1](https://stackblitz.com/edit/ngx-cumulio-tutorial-part1)   |   [Code Part 1](https://github.com/LemmensDaan/ngx-cumulio-demo-part1)
 
 # Contents
 - [What is ngx-cumulio](#What-is-ngx-cumulio)
-- [What we'll build](#What-we'll-build)
+- [What we will build](#What-we-will-build)
     - Part 1: display and customize a dashboard  
     - Part 2: embed dashboards in a multiple page website
 - [Requirements](#Requirements)
 - [Part 1 - Embedding a Cumul.io dashboard](#Part-1---Embedding-a-Cumul.io-dashboard)
     - [Setup Angular App](#Setup-Angular-App)
-    - [Start code](#Displaying-the-dashboard)
+    - [Displaying the dashboard](#Displaying-the-dashboard)
     - [Code so far](#Code-so-far)
 - [Conclusion](#Conclusion)
  ___
@@ -21,7 +21,7 @@ The library is compatible with versions of Angular 4 and higher.
 For more information about ngx-cumulio, [visit the readme on npm](https://www.npmjs.com/package/ngx-cumulio). For more information about Cumul.io or making your own dashbaord, [visit the website](https://cumul.io/main).
 ___
 
-## What we'll build
+## What we will build
 This tutorial is split up in 2 parts, this is part 1. In this part we will make a simple one page Angular application with an embedded Cumul.io dashboard.  
 In [part 2](https://github.com/LemmensDaan/ngx-cumulio-demo-part2/blob/master/README.md), we will make a multipage Angular application with several dashboards.
 ___
@@ -41,10 +41,10 @@ First, create a new angular project:
 ```bash
 ng new my-dashboard-website
 ```
-Type `yes` for routing, we are going to need it for part 2 of this tutorial, where we make a multipage application.   
-Choose your prefered styling language, we'll be using `scss` in this tutorial     
-We can start this Angular app by using the `ng serve` command, but be sure you are in the correct directory.  
-Go to [`localhost:4200`](https://localhost:4200/) to see your app in action.  
+Type **`yes`** for routing, we are going to need it for part 2 of this tutorial, where we make a multipage application.   
+Choose your prefered styling language, we'll be using **`scss`** in this tutorial     
+We can start this Angular app by using the **`ng serve`** command, but be sure you are in the correct directory.  
+Go to [**`localhost:4200`**](https://localhost:4200/) to see your app in action.  
 
 Next, install the library by using the following command in your **`terminal`**:
 ```bash
@@ -180,9 +180,9 @@ and put this styling in **`app.component.scss`**
 }
 ```
 
-Our background color doesn't match the color of our dashboard background. The color of this dashboard is **`rgb(238, 243, 246)`**.   
-When you create a dashboard you can choose dashboard background color, but now we will have to change the background of our application.  
-Change the body background color in the main **`styles.scss`**.
+Our background color doesn't match the color of our dashboard background.   
+The color of this dashboard is **`rgb(238, 243, 246)`**.   
+When you create a dashboard you can choose dashboard background color, but now we will have to change the background of our application. Change the body background color in the main **`styles.scss`**.
 
 ```CSS
 html, body {
@@ -228,7 +228,7 @@ Let's say we want to change our loader colors to match our dashboard.
 </cumulio-dashboard>
 ```
 Now the loader and the font color are in a blue color.
-You can also have multiple dashboards on one page if you want. Just add another `cumulio-dashboard` in the `content` div and watch the magic happen.
+You can also have multiple dashboards on one page if you want. Just add another **`cumulio-dashboard`** in the **`content`** div and watch the magic happen.
 
 ___
 
